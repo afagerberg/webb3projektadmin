@@ -1,0 +1,355 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif
+}
+
+#frontlogo {
+    width:300px;
+    margin:0 auto;
+    height:200px;
+    background-color:rgb(59, 65, 80);
+    margin-bottom:10px;
+}
+
+a{
+    text-decoration:none;
+}
+header{
+    position: sticky;
+    top:0;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:20px 0 0 20px;
+    border-bottom:1px solid grey;
+    background-color:white;
+
+}
+
+header p{
+
+    font-size:2em;
+    line-height: 1;
+    font-weight:bold;
+    
+}
+header ul {
+    list-style:none;
+    display:inline-block;
+    margin-top:50px;
+
+}
+
+header li {
+    float:left;
+}
+
+header li a {
+    color:rgb(43, 43, 43);
+    transition: all 0.2s;
+    font-weight:bold;
+    display:inline-block;
+    padding:10px 15px 10px 15px;
+    border-right:0.5px solid rgb(204, 204, 204);
+}
+
+.logout {
+    color: rgb(223, 113, 23);
+}
+
+header a:hover {
+    filter:opacity(0.6);
+}
+
+#admin {
+    max-width:600px;
+    width:94%;
+    margin:0 auto;
+    padding-top:100px;
+}
+
+#educontent, #workcontent, #webcontent{
+    max-width:800px;
+    margin:0 auto;
+    padding-top:50px;
+}
+
+.admintopics{
+    list-style: none;
+    max-width:600px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:0.5px;
+}
+
+.admintopics li {
+    flex:49%;
+    text-align:center;
+    margin:1px;
+    
+}
+.box1 {background-color:rgb(39, 41, 51);}
+.box2 {background-color:rgb(223, 113, 23);}
+.box3 {background-color:rgb(6, 59, 47);}
+.box4 {background-color:rgb(156, 40, 11); color:white;}
+
+.admintopics li a {
+    display:block;
+    padding:50px;
+    color:white;
+    font-weight:bold;
+    transition:all 0.2s;   
+}
+
+.admintopics a:hover {
+
+    filter:opacity(0.6);
+
+}
+
+#admin .logout{
+    display: block;
+    font-weight:bold;
+    margin-top:15px;
+}
+#admin .logout:hover {
+    filter:opacity(0.6);
+}
+
+h2 {
+    padding-top:15px;
+    padding-bottom:10px;
+    max-width:400px;
+    width:94%;
+    margin:0 auto;
+}
+
+#admin h2 {
+    max-width:300px;
+    margin:0 auto;
+    text-align:center;
+    font-size:1.2em;
+    color:grey;
+    padding-top:5px;
+    padding-bottom:30px;
+}
+
+#loginform {
+    width:100%;
+    margin:0 auto;
+    padding-bottom:20px;
+}
+
+#loginbtn {
+    border:0;
+    padding:15px;
+    border: 3px solid rgb(41, 49, 70);
+    color:rgb(41, 49, 70);
+    background-color: transparent;
+    font-weight:bold;
+    cursor:pointer;
+    transition:all 0.2s;
+}
+#loginbtn:hover {background-color:rgb(41, 49, 70); color:white;}
+
+#postform {
+    max-width:800px;
+    padding-bottom:20px;
+    width:94%;
+    margin:0 auto;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    scroll-margin-top:260px;
+}
+
+label {    
+    max-width:395px;
+    width:100%;   
+    margin:0 auto;
+}
+
+#labeldesc {
+    max-width:390px;
+    margin:0 auto;
+
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-bottom:16px;
+    border-radius:5px;
+    border:1.5px solid rgb(173, 173, 173);
+}
+
+#description {
+    display:block;
+    max-width:390px;
+    margin:0 auto;
+    width:100%;
+    padding:15px;
+}
+
+#add, #update {
+    max-width:390px;
+    margin:0 auto;
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:0;
+    color: white;
+    background-color: rgb(39, 41, 51);
+    cursor:pointer;
+    transition:all 0.3s;
+}
+
+#add:hover, #update:hover {
+    filter:opacity(0.6);
+}
+
+#add {
+    display:block;
+}
+
+#update {
+    display:none;
+}
+
+
+table {
+    max-width:800px;
+    width:94%;
+    margin: 0 auto;
+    margin-top: 10px;
+    display:none;
+    
+}
+
+
+table, tr, td {
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#theadedu{
+    background-color:rgb(39, 41, 51);
+    color:white;
+}
+
+
+thead td {
+    padding:20px;
+    width:100%;
+}
+
+tbody td{    
+    padding:20px 20px 10px 20px;
+    width:100%;
+}
+
+.tablebtns button  {
+    float:right;
+    padding:10px 15px 10px 15px;
+    margin-left:10px;
+    border:3px solid rgb(39, 41, 51);
+    font-weight:bold;
+    color:rgb(39, 41, 51);
+    cursor:pointer;
+    background-color:transparent;
+    border-radius:5px;
+    transition:all 0.2s;
+}
+
+.listingedu button {
+    padding:10px 15px 10px 15px;
+    margin-right:10px;
+    margin-top:15px;
+    border:3px solid white;
+    font-weight:bold;
+    color:white;
+    cursor:pointer;
+    background-color:transparent;
+    border-radius:5px;
+}
+
+table button:hover {
+    color:white;
+    background-color:rgb(39, 41, 51);
+}
+.tablebtns{
+    border-bottom:1px solid rgb(39, 41, 51);
+}
+
+
+.listingedu {
+    display:inline-block;
+    list-style: none;
+    width:100%;
+    margin:0 auto;
+    background-color:rgb(39, 41, 51);
+    border-bottom:1px solid white;
+    padding:10px 0px 10px 0px;
+}
+
+.listingedu li {
+    max-width:400px;
+    width:94%;
+    margin:0 auto;
+    padding:5px;
+    color:white;
+    
+}
+footer {
+    margin-top:20px;
+    padding:50px;
+}
+
+footer p {
+    text-align:center;
+}
+
+
+@media screen and (min-width:800px){
+
+    h2 {
+        max-width:800px;
+        margin-left:0;
+    }
+
+    table {
+        display:block;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #eduprintlist, #workprintlist, #webprintlist{
+        display:none;
+    }
+
+    #postform {
+        width:100%;
+    }
+
+    #labeldesc{
+        max-width:800px;
+    }
+
+    #description {
+        max-width:800px;
+    }
+
+}
+
+
+
+
