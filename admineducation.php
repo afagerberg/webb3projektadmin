@@ -36,8 +36,8 @@
         <h2 id="formheading">Lägg till utbildning</h2>
         
         <form id="postform">
-            <label for="courseid"> Kurskod:<br>
-            <input type="text" name="courseid" id="courseid"></label><br>
+            <label for="coursecode"> Kurskod:<br>
+            <input type="text" name="coursecode" id="coursecode"></label><br>
             <label for="cname"> Kursnamn:<br>
             <input type="text" name="cname" id="cname"></label><br>
             <label for="program"> Program:<br>
@@ -48,8 +48,8 @@
             <input type="date" name="startdate" id="startdate"></label><br>
             <label for="enddate">Slutdatum<br>
             <input type="date" name="enddate" id="enddate"></label><br>
-            <button id="add">Lägg till utbildning</button>
-            <button id="update"> Uppdatera utbildning</button>
+            <button id="add" class="box1">Lägg till utbildning</button>
+            <button id="update" class="box1"> Uppdatera utbildning</button>
         </form>
         <p id="message"></p>
 

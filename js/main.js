@@ -1,26 +1,29 @@
 //Moment 5 DT173G av Alice Fagerberg
 
 "use strict";
-//variabler
-let tableEl = document.getElementById("eduprinttable");
-let listEl = document.getElementById("eduprintlist");
-let formHeading = document.getElementById("formheading");
-let coursesHeading = document.getElementById("coursesheading");
-
+//Allmänna variabler och styles
 let addButtonEl = document.getElementById("add");
 let updateBtn = document.getElementById("update");
 
 let message = document.getElementById("message");
 
-let codeInput = document.getElementById("courseid");
+let formHeading = document.getElementById("formheading");
+
+updateBtn.style.display = "none";
+addButtonEl.style.display ="block";
+
+//Variabler för utbildningar
+let edutableEl = document.getElementById("eduprinttable");
+let edulistEl = document.getElementById("eduprintlist");
+let coursesHeading = document.getElementById("educationheading");
+
+let codeInput = document.getElementById("coursecode");
 let nameInput = document.getElementById("cname");
 let programInput = document.getElementById("program");
 let eduplaceInput = document.getElementById("eduplace");
 let startdateInput = document.getElementById("startdate");
 let enddateInput = document.getElementById("enddate");
 
-updateBtn.style.display = "none";
-addButtonEl.style.display ="block";
 
 //Händelselyssnare
 window.addEventListener("load", getAllEducations);
@@ -30,20 +33,20 @@ addButtonEl.addEventListener("click", function(e){
 });
 
 
-//funktioner
+//funktioner för utbildningar
 
 //Hämtar alla kurser och skriver ut
 function getAllEducations(){
-    listEl.innerHTML = "";
-    tableEl.innerHTML = "";
+    edulistEl.innerHTML = "";
+    edutableEl.innerHTML = "";
 
     fetch("http://localhost/webb3projekt/completedstudies")
     .then(response => response.json())
     .then(data =>{
        data.forEach(education =>{
-        tableEl.innerHTML +=
+        edutableEl.innerHTML +=
         `<tr>
-            <td>${education.courseid}</td>
+            <td>${education.coursecode}</td>
             <td>${education.cname}</td>
             <td>${education.program}</td>
             <td>${education.eduplace}</td>
@@ -51,20 +54,20 @@ function getAllEducations(){
             <td>${education.enddate}</td>
         </tr>
         <tr class="tablebtns">
-        <td colspan="6"><button id="${education.eduid}" onclick="deleteEducation('${education.eduid}')">Radera</button>
-        <button class="edit" onclick="getEducationById('${education.eduid}', '${education.courseid}', '${education.cname}', '${education.program}', '${education.eduplace}', '${education.startdate}', '${education.enddate}')">Redigera</button></td>
+        <td colspan="6"><button id="${education.eduid}" onclick="deleteEducation(${education.eduid})">Radera</button>
+        <button class="edit" onclick="getEducationById(${education.eduid}, '${education.coursecode}', '${education.cname}', '${education.program}', '${education.eduplace}', '${education.startdate}', '${education.enddate}')">Redigera</button></td>
         </tr>`; 
 
-           listEl.innerHTML +=
+           edulistEl.innerHTML +=
            `<ul class="listingedu">
-                <li><strong>Kurskod: </strong> ${education.courseid}</li>
+                <li><strong>Kurskod: </strong> ${education.coursecode}</li>
                 <li><strong>Kursnamn: </strong> ${education.cname}</li>
                 <li><strong>Program: </strong> ${education.program}</li>
                 <li><strong>Lärosäte: </strong> ${education.eduplace}</li>
                 <li><strong>startdatum: </strong> ${education.startdate}</li>
                 <li><strong>Slutdatum: </strong> ${education.enddate}</li>
-                <li class="line"><button id="${education.eduid}" onclick="deleteEducation('${education.eduid}')">Radera</button>
-                <button class="edit" onclick="getEducationById('${education.eduid}', '${education.courseid}', '${education.cname}', '${education.program}', '${education.eduplace}', '${education.startdate}', '${education.enddate}')">Redigera</button></li>
+                <li><button id="${education.eduid}" onclick="deleteEducation(${education.eduid})">Radera</button>
+                <button class="edit" onclick="getEducationById(${education.eduid}, '${education.coursecode}', '${education.cname}', '${education.program}', '${education.eduplace}', '${education.startdate}', '${education.enddate}')">Redigera</button></li>
            </ul>`;
        }) 
     })
@@ -72,14 +75,14 @@ function getAllEducations(){
 
 // Lägg till en kurs
 function addEducation() {
-    let courseid = codeInput.value;
+    let coursecode = codeInput.value;
     let cname = nameInput.value;
     let program = programInput.value;
     let eduplace = eduplaceInput.value;
     let startdate = startdateInput.value;
     let enddate = enddateInput.value;
     
-    let courseObj = {'courseid': courseid, 'cname': cname, 'program': program, 'eduplace': eduplace, 'startdate': startdate, 'enddate': enddate};
+    let courseObj = {'coursecode': coursecode, 'cname': cname, 'program': program, 'eduplace': eduplace, 'startdate': startdate, 'enddate': enddate};
         
         fetch("http://localhost/webb3projekt/completedstudies", {
             method: 'POST',
@@ -90,11 +93,15 @@ function addEducation() {
             response.json()
             if(response.status === 400){
                 message.style.color = "rgb(212, 25, 0)";
+                message.style.height = "20px";
+                message.style.marginTop = "10px"
                 message.innerHTML = "Du måste fylla i alla fält! - En kurskod, ett kursnamn, program, lärosäte samt start och sluttdatum på kursen";
             }else{
                 if(response.status === 201) {
                     message.style.color = "green";
-                    message.innerHTML = "En kurs lades till!";
+                    message.style.height = "20px";
+                    message.style.marginTop = "10px";
+                    message.innerHTML = "En utbildning lades till!";
                 }else {
                     message.style.color = "rgb(212, 25, 0)";
                     message.innerHTML = "något gick fel...";
@@ -123,8 +130,7 @@ function addEducation() {
 }
 
 //Hämta specifik kurs, skriver ut i formuläret
-function getEducationById(id, courseid, cname, program, eduplace, startdate, enddate) {
-
+function getEducationById(id, coursecode, cname, program, eduplace, startdate, enddate) {
 
     formHeading.innerHTML = "Uppdatera kurs";
 
@@ -135,7 +141,7 @@ function getEducationById(id, courseid, cname, program, eduplace, startdate, end
     updateBtn.style.display = "block";
     addButtonEl.style.display ="none";
 
-    codeInput.value = courseid;
+    codeInput.value = coursecode;
     nameInput.value = cname;
     programInput.value = program;
     eduplaceInput.value = eduplace;
@@ -156,17 +162,17 @@ function getEducationById(id, courseid, cname, program, eduplace, startdate, end
 function updateEducation(id) {
     
     //inputvariabler
-    let courseid = codeInput.value;
+    let coursecode = codeInput.value;
     let cname = nameInput.value;
     let program = programInput.value;
     let eduplace = eduplaceInput.value;
     let startdate = startdateInput.value;
     let enddate = enddateInput.value;
     
-    let courseObj = {'courseid': courseid, 'cname': cname, 'program': program, 'eduplace': eduplace, 'startdate': startdate, 'enddate': enddate};
+    let courseObj = {'coursecode': coursecode, 'cname': cname, 'program': program, 'eduplace': eduplace, 'startdate': startdate, 'enddate': enddate};
     
     // kollar input och hämtar
-    if(response.status === 400){
+    if(coursecode == "" || cname == "" || program == "" || eduplace == "" || startdate == "" || enddate == ""){
         message.style.color = "rgb(212, 25, 0)";
         message.innerHTML = "Du måste fylla i alla fält för att uppdatera kursen!";
     }else{
@@ -185,18 +191,16 @@ function updateEducation(id) {
                 if(response.status === 200) {
 
                     message.style.color = "green";
+                    message.style.height = "20px";
+                    message.style.marginTop = "10px";
                     message.innerHTML = "Kursen uppdaterades!";
 
-                    id="";
-                    codeInput.value = "";
-                    nameInput.value = "";
-                    programInput.value = "";
-                    eduplaceInput.value = "";
-                    startdateInput.value = "";
-                    enddateInput.value = "";
+                    window.setTimeout(function(){location.reload()},2000);
 
                 }else {
                     message.innerHTML = "något gick fel...";
+                    message.style.height = "20px";
+                    message.style.marginTop = "10px"
                     message.style.color = "rgb(212, 25, 0)";
                 }
             
@@ -232,17 +236,18 @@ function updateEducation(id) {
 }
 
 // Raderar specifik kurs
-function deleteCourse(id) {
+function deleteEducation(id) {
     fetch("http://localhost/webb3projekt/completedstudies?eduid=" + id, {
         method: 'DELETE',
 
     })
     .then(response =>{ 
         message.style.color = "green";
+        message.style.height = "30px";
         message.innerHTML = "Kursen är raderad!";
         response.json() })
     .then(data =>{
-        getCourses();
+        getAllEducations();
     })
     .catch(error => {
         console.log('Error', error);

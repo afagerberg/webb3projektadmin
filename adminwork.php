@@ -31,27 +31,27 @@
 
     </header>
 
-    <div id="educontent">
+    <div id="workcontent">
     
         <h2 id="formheading">Lägg till arbetserfarenhet</h2>
         
-        <form id="form">
-            <label for="title"> Arbetstitel:<br>
-            <input type="text" name="title" id="title"></label><br>
+        <form id="postform">
+            <label for="worktitle"> Arbetstitel:<br>
+            <input type="text" name="worktitle" id="worktitle"></label><br>
             <label for="workplace"> Arbetsplats:<br>
             <input type="text" name="workplace" id="workplace"></label><br>
             <label for="startdate">Startdatum:<br>
             <input type="date" name="startdate" id="startdate"></label><br>
             <label for="enddate">Slutdatum<br>
             <input type="date" name="enddate" id="enddate"></label><br>
-            <button id="add">Lägg till arbete</button>
-            <button id="update"> Uppdatera arbete</button>
+            <button id="add" class="box2">Lägg till arbete</button>
+            <button id="update" class="box2"> Uppdatera arbete</button>
         </form>
         <p id="message"></p>
 
-        <h2 id="educationheading">Min arbetserfarenhet</h2>
+        <h2 id="workheading">Min arbetserfarenhet</h2>
         <table>
-            <thead id="theadedu">
+            <thead id="theadwork">
                 <!-- Titelegenskaper för tillagd vara-->
                 <tr>
                     <td>Arbetstitel</td>
@@ -61,10 +61,10 @@
                 </tr>
             </thead>
             <!-- Här läggs tillagda objekt (vid klick på lägg till-knapp på enskild produkt-sida)-->
-            <tbody id="workprinttable">
+            <tbody id="worktable">
           </tbody>
         </table>
-        <div id="workprintlist">
+        <div id="worklist">
 
         </div>
     </div>
@@ -74,6 +74,6 @@
 
 
     
-<script src="js/main.js"></script>    
+<script src="js/work.js"></script>    
 </body>
 </html>

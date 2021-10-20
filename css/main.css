@@ -60,7 +60,7 @@ header li a {
 }
 
 .logout {
-    color: rgb(223, 113, 23);
+    color: rgb(190, 41, 3);
 }
 
 header a:hover {
@@ -199,6 +199,12 @@ input{
     padding:15px;
 }
 
+#message {
+    margin-top:0;
+    height:0;
+    transition: all 0.5s;
+}
+
 #add, #update {
     max-width:390px;
     margin:0 auto;
@@ -207,7 +213,6 @@ input{
     margin-top:10px;
     border:0;
     color: white;
-    background-color: rgb(39, 41, 51);
     cursor:pointer;
     transition:all 0.3s;
 }
@@ -245,6 +250,16 @@ table, tr, td {
     color:white;
 }
 
+#theadwork{
+    background-color:rgb(223, 113, 23);
+    color:white;
+}
+
+#theadwebp{
+    background-color:rgb(6, 59, 47);
+    color:white;
+}
+
 
 thead td {
     padding:20px;
@@ -253,7 +268,6 @@ thead td {
 
 tbody td{    
     padding:20px 20px 10px 20px;
-    width:100%;
 }
 
 .tablebtns button  {
@@ -269,7 +283,7 @@ tbody td{
     transition:all 0.2s;
 }
 
-.listingedu button {
+.listingedu button, .listingwork button, .listingwebpages button {
     padding:10px 15px 10px 15px;
     margin-right:10px;
     margin-top:15px;
@@ -286,28 +300,29 @@ table button:hover {
     background-color:rgb(39, 41, 51);
 }
 .tablebtns{
-    border-bottom:1px solid rgb(39, 41, 51);
+    border-bottom:1px solid rgb(49, 49, 49);
 }
 
-
-.listingedu {
+.listingedu, .listingwork, .listingwebpages {
     display:inline-block;
     list-style: none;
     width:100%;
     margin:0 auto;
-    background-color:rgb(39, 41, 51);
     border-bottom:1px solid white;
     padding:10px 0px 10px 0px;
+    
 }
-
-.listingedu li {
+.listingedu li, .listingwork li, .listingwebpages li {
     max-width:400px;
     width:94%;
     margin:0 auto;
     padding:5px;
-    color:white;
-    
+    color:white;    
 }
+.listingedu{background-color:rgb(39, 41, 51);}
+.listingwork{background-color:rgb(223, 113, 23);}
+.listingwebpages{background-color:rgb(6, 59, 47);}
+
 footer {
     margin-top:20px;
     padding:50px;
@@ -328,11 +343,12 @@ footer p {
     table {
         display:block;
         margin: 0 auto;
+        table-layout: fixed;
         width: 100%;
         margin-top: 10px;
     }
 
-    #eduprintlist, #workprintlist, #webprintlist{
+    #eduprintlist, #worklist, #webplist{
         display:none;
     }
 

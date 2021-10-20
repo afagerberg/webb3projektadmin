@@ -30,7 +30,7 @@
 
     </header>
 
-    <div id="educontent">
+    <div id="webcontent">
     
         <h2 id="formheading">Lägg till webbplatser som du har utvecklat</h2>
         
@@ -42,14 +42,14 @@
             <label for="description" id="labeldesc"> Beskriv din webbplats:</label><br>
             <textarea name="description" id="description"  rows="10"></textarea><br>
 
-            <button id="add">Lägg till webbplats</button>
-            <button id="update"> Uppdatera webbplats</button>
+            <button id="add" class="box3">Lägg till webbplats</button>
+            <button id="update" class="box3"> Uppdatera webbplats</button>
         </form>
         <p id="message"></p>
 
-        <h2 id="educationheading">Mina webbplatser</h2>
+        <h2 id="webpagesheading">Mina webbplatser</h2>
         <table>
-            <thead id="theadedu">
+            <thead id="theadwebp">
                 <!-- Titelegenskaper för tillagd vara-->
                 <tr>
                     <td>Titel webbplats</td>
@@ -58,10 +58,10 @@
                 </tr>
             </thead>
             <!-- Här läggs tillagda objekt (vid klick på lägg till-knapp på enskild produkt-sida)-->
-            <tbody id="printtable">
+            <tbody id="webptable">
           </tbody>
         </table>
-        <div id="printlist">
+        <div id="webplist">
 
         </div>
     </div>
@@ -71,6 +71,6 @@
 
 
     
-<script src="js/main.js"></script>    
+<script src="js/webpages.js"></script>    
 </body>
 </html>
