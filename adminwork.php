@@ -39,6 +39,7 @@
         </div>
     </div>
 <footer>
+<p><a href="#">Gå till mitt digiCV</a></p>
     <p>Webbutveckling III Projekt // Alice Fagerberg</p>
 </footer>    
 

@@ -23,7 +23,7 @@
         <ul class="mybuttons">
         <li><a href="admineducation.php"> Utbildningar</a></li>
         <li><a href="adminwork.php">Arbetserfarenhet</a></li>
-        <li><a href="adminwebpages">Webbplatser</a></li>
+        <li><a href="adminwebpages">Webbportfolio</a></li>
         <li><a href="logout.php" class="logout">Logga ut</a></li>
         
         </ul>

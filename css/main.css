@@ -23,10 +23,6 @@ header{
     position: sticky;
     top:0;
     width:100%;
-    display:flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
     padding-top:20px;
     border-bottom:1px solid grey;
     background-color:white;
@@ -111,8 +107,8 @@ header a:hover {
     
 }
 .box1 {background-color:rgb(39, 41, 51);}
-.box2 {background-color:rgb(223, 113, 23);}
-.box3 {background-color:rgb(40, 82, 29);}
+.box2 {background-color:rgb(218, 144, 34);}
+.box3 {background-color:rgb(49, 66, 18);}
 .box4 {background-color:rgb(156, 40, 11); color:white;}
 
 .admintopics li a {
@@ -275,7 +271,7 @@ table {
   } 
   
   th,td {
-    padding:20px 15px 10px 15px;
+    padding:18px 15px 20px 15px;
     text-align:left;
     vertical-align: top;
 
@@ -288,13 +284,13 @@ table {
 }
 
 #theadwork{
-    background-color:rgb(223, 113, 23);
+    background-color:rgb(218, 144, 34);
     color:white;
 }
 
 
 #theadwebp{
-    background-color: rgb(156, 40, 11);
+    background-color: rgb(49, 66, 18);
     color:white;
     
 }
@@ -329,12 +325,12 @@ tbody a:hover {
 }
 
 #eduprinttable button {color:rgb(39, 41, 51); border:3px solid rgb(39, 41, 51);}
-#worktable button {color:rgb(223, 113, 23); border:3px solid rgb(223, 113, 23);}
-#webptable button {color:rgb(156, 40, 11); border:3px solid rgb(156, 40, 11);}
+#worktable button {color:rgb(218, 144, 34); border:3px solid rgb(218, 144, 34);}
+#webptable button {color:rgb(40, 71, 0); border:3px solid rgb(40, 71, 0);}
 
 #eduprinttable button:hover{color:white; background-color:rgb(39, 41, 51);}
-#worktable button:hover {color:white; background-color:rgb(223, 113, 23);}
-#webptable button:hover {color:white; background-color:rgb(156, 40, 11);}
+#worktable button:hover {color:white; background-color:rgb(218, 144, 34);}
+#webptable button:hover {color:white; background-color:rgb(40, 71, 0);}
 
 .tablebtns{
     border-bottom:1px solid rgb(145, 145, 145);
@@ -370,8 +366,8 @@ tbody a:hover {
     color:white;    
 }
 .listingedu{background-color:rgb(39, 41, 51);}
-.listingwork{background-color:rgb(223, 113, 23);}
-.listingwebpages{background-color:rgb(6, 59, 19);}
+.listingwork{background-color:rgb(218, 144, 34);}
+.listingwebpages{background-color:rgb(49, 66, 18);}
 
 footer {
     margin-top:100px;
@@ -396,6 +392,13 @@ footer p {
 
 
 @media screen and (min-width:800px){
+
+    header{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
     header .logobox{
         margin-left:50px;
     }

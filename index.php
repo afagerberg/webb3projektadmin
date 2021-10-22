@@ -23,7 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>Logga in till digiCV admin</title>
+    <title>digiCV admin</title>
 </head>
 <body>
 
@@ -63,8 +63,8 @@
         <ul class="admintopics">
         <li><a href="admineducation.php" class="box1"> Utbildningar</a></li>
         <li><a href="adminwork.php" class="box2">Arbetserfarenhet</a></li>
-        <li><a href="adminwebpages" class="box4">Webbplatser</a></li>
-        <li><a href="adminwebpages" class="box3">Se mitt digiCV</a></li>   
+        <li><a href="adminwebpages" class="box3">Webbplatser</a></li>
+        <li><a href="adminwebpages" class="box4">Se mitt digiCV</a></li>   
     </ul>
     <a href="logout.php" class="logout">Logga ut</a>
 <?php

@@ -10,8 +10,8 @@
             <label for="description" id="labeldesc"> Beskriv din webbplats:</label><br>
             <textarea name="description" id="description"  rows="10"></textarea><br>
 
-            <button id="add" class="box4">Lägg till webbplats</button>
-            <button id="update" class="box4"> Uppdatera webbplats</button>
+            <button id="add" class="box3">Lägg till webbplats</button>
+            <button id="update" class="box3"> Uppdatera webbplats</button>
         </form>
         <p id="message"></p>
 
@@ -34,6 +34,7 @@
         </div>
     </div>
 <footer>
+<p><a href="#">Gå till mitt digiCV</a></p>
     <p>Webbutveckling III Projekt // Alice Fagerberg</p>
 </footer>    
 
