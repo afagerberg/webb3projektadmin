@@ -49,7 +49,7 @@ function getAllJobs(){
             <td>${job.enddate}</td>
         </tr>
         <tr class="tablebtns">
-        <td colspan="6"><button id="${job.jobid}" onclick="deleteJob('${job.jobid}')">Radera</button>
+        <td colspan="4"><button id="${job.jobid}" onclick="deleteJob('${job.jobid}')">Radera</button>
         <button class="edit" onclick="getJobById('${job.jobid}', '${job.title}', '${job.workplace}', '${job.startdate}', '${job.enddate}')">Redigera</button></td>
         </tr>`; 
 

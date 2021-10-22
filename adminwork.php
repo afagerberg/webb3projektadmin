@@ -1,37 +1,5 @@
 <!-- Projekt DT173G av Alice Fagerberg-->
-<?php include("includes/config.php"); ?>
-<?php
-
-    // Kontroll om användare inloggad
-    if(!isset($_SESSION['username'])){
-        header("location: index.php?message=Logga in för att administera...");
-    }
-
-?>
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Webbutveckling III moment 5</title>
-</head>
-<body>
-    <header>
-        <p>digiCV<br>admin</p>
-
-        <ul class="mybuttons">
-        <li><a href="admineducation.php" class="goto"> Utbildningar</a></li>
-        <li><a href="adminwork.php" class="goto">Arbetserfarenhet</a></li>
-        <li><a href="adminwebpages" class="goto">Webbplatser</a></li>
-        <li><a href="logout.php" class="logout">Logga ut</a></li>
-        
-        </ul>
-
-    </header>
-
-    <div id="workcontent">
+<?php include("includes/header.php") ?>
     
         <h2 id="formheading">Lägg till arbetserfarenhet</h2>
         
@@ -52,18 +20,20 @@
         <h2 id="workheading">Min arbetserfarenhet</h2>
         <table>
             <thead id="theadwork">
-                <!-- Titelegenskaper för tillagd vara-->
+                <!-- tabell-->
                 <tr>
-                    <td>Arbetstitel</td>
-                    <td>arbetsplats</td>
-                    <td>Startdatum</td>
-                    <td>Slutdatum</td>
+                    <th>Arbetstitel</th>
+                    <th>Arbetsplats</th>
+                    <th>Startdatum</th>
+                    <th>Slutdatum</th>
                 </tr>
             </thead>
-            <!-- Här läggs tillagda objekt (vid klick på lägg till-knapp på enskild produkt-sida)-->
+            <!-- tabell utskrift-->
             <tbody id="worktable">
           </tbody>
         </table>
+
+        <!-- Utskrift mobil-->
         <div id="worklist">
 
         </div>

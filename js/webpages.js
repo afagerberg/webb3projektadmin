@@ -42,7 +42,7 @@ function getAllwebpages(){
         webptableEl.innerHTML +=
         `<tr>
             <td>${webpage.title}</td>
-            <td>${webpage.pageurl}</td>
+            <td><a href="${webpage.pageurl}" target="_blank"> Klicka dig vidare</a></td>
             <td>${webpage.pagedescription}</td>
         </tr>
         <tr class="tablebtns">
@@ -52,9 +52,9 @@ function getAllwebpages(){
 
            webplistEl.innerHTML +=
            `<ul class="listingwebpages">
-                <li><strong>Kursnamn: </strong> ${webpage.title}</li>
-                <li><strong>startdatum: </strong> ${webpage.pageurl}</li>
-                <li><strong>Slutdatum: </strong> ${webpage.pagedescription}</li>
+                <li><strong>Titel webbplats: </strong> ${webpage.title}</li>
+                <li><strong>Webblänk: </strong><a href="${webpage.pageurl}" target="_blank"> Klicka dig vidare </a></li>
+                <li><strong>Beskrivning: </strong> ${webpage.pagedescription}</li>
                 <li><button id="${webpage.id}" onclick="deleteWebpage('${webpage.id}')">Radera</button>
                 <button class="edit" onclick="getWebpageById(${webpage.id}, '${webpage.title}', '${webpage.pageurl}', '${webpage.pagedescription}')">Redigera</button></li>
            </ul>`;

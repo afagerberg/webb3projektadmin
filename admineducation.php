@@ -1,37 +1,5 @@
 <!-- Projekt DT173G av Alice Fagerberg-->
-<?php include("includes/config.php"); ?>
-<?php
-
-    // Kontroll om användare inloggad
-    if(!isset($_SESSION['username'])){
-        header("location: index.php?message=Logga in för att administera...");
-    }
-
-?>
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <title>Webbutveckling III moment 5</title>
-</head>
-<body>
-    <header>
-        <p>digiCV<br>admin</p>
-
-        <ul class="mybuttons">
-        <li><a href="admineducation.php"> Utbildningar</a></li>
-        <li><a href="adminwork.php">Arbetserfarenhet</a></li>
-        <li><a href="adminwebpages">Webbplatser</a></li>
-        <li><a href="logout.php" class="logout">Logga ut</a></li>
-        
-        </ul>
-
-    </header>
-
-    <div id="educontent">
+<?php include("includes/header.php") ?>
     
         <h2 id="formheading">Lägg till utbildning</h2>
         
@@ -56,28 +24,23 @@
         <h2 id="educationheading">Mina utbildningar</h2>
         <table>
             <thead id="theadedu">
-                <!-- Titelegenskaper för tillagd vara-->
+                <!-- tabell-->
                 <tr>
-                    <td>Kurskod</td>
-                    <td>Kursnamn</td>
-                    <td>Program</td>
-                    <td>Lärosäte</td>
-                    <td>Startdatum</td>
-                    <td>Slutdatum</td>
+                    <th>Kurskod</th>
+                    <th>Kursnamn</th>
+                    <th>Program</th>
+                    <th>Lärosäte</th>
+                    <th>Startdatum</th>
+                    <th>Slutdatum</th>
                 </tr>
             </thead>
-            <!-- Här läggs tillagda objekt (vid klick på lägg till-knapp på enskild produkt-sida)-->
+            <!-- utskrift-->
             <tbody id="eduprinttable">
           </tbody>
         </table>
+        <!-- utskrift mobil-->
         <div id="eduprintlist">
 
         </div>
-    </div>
-<footer>
-    <p>Webbutveckling III Projekt // Alice Fagerberg</p>
-</footer>    
-    
-<script src="js/main.js"></script>   
-</body>
-</html>
+
+<?php include("includes/footer.php") ?>

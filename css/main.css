@@ -22,32 +22,38 @@ a{
 header{
     position: sticky;
     top:0;
+    width:100%;
     display:flex;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    padding:20px 0 0 20px;
+    padding-top:20px;
     border-bottom:1px solid grey;
     background-color:white;
 
 }
 
-header p{
-
-    font-size:2em;
-    line-height: 1;
-    font-weight:bold;
+header .logobox{
+    margin:0 auto;
+    width:100px;
+    height:70px;
+    background-color:black;
     
 }
 header ul {
+    width:100%;
     list-style:none;
-    display:inline-block;
-    margin-top:50px;
-
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    margin-top:10px;
+    justify-content: space-evenly;
 }
 
 header li {
-    float:left;
+    flex:25%;
+    border:0.5px solid rgb(197, 197, 197);
+    text-align:center;
 }
 
 header li a {
@@ -56,11 +62,11 @@ header li a {
     font-weight:bold;
     display:inline-block;
     padding:10px 15px 10px 15px;
-    border-right:0.5px solid rgb(204, 204, 204);
+    
 }
 
 .logout {
-    color: rgb(190, 41, 3);
+    color: rgb(120, 121, 126);
 }
 
 header a:hover {
@@ -74,10 +80,19 @@ header a:hover {
     padding-top:100px;
 }
 
-#educontent, #workcontent, #webcontent{
+#content{
     max-width:800px;
     margin:0 auto;
-    padding-top:50px;
+    padding-top:30px;
+}
+
+#subheadline {
+    color:rgb(202, 202, 202);
+    font-size:1.1em;
+    border-bottom:1px solid rgb(219, 219, 219);
+    max-width:400px;
+    width:94%;
+    margin:0 auto;
 }
 
 .admintopics{
@@ -97,7 +112,7 @@ header a:hover {
 }
 .box1 {background-color:rgb(39, 41, 51);}
 .box2 {background-color:rgb(223, 113, 23);}
-.box3 {background-color:rgb(6, 59, 47);}
+.box3 {background-color:rgb(40, 82, 29);}
 .box4 {background-color:rgb(156, 40, 11); color:white;}
 
 .admintopics li a {
@@ -127,6 +142,7 @@ h2 {
     padding-top:15px;
     padding-bottom:10px;
     max-width:400px;
+    font-size:1.2em;
     width:94%;
     margin:0 auto;
 }
@@ -229,21 +245,42 @@ input{
     display:none;
 }
 
+table, form input, #content li {
+    font-size:1.05em;
+}
+
+#content button {
+    font-size:0.9em;
+}
+
 
 table {
-    max-width:800px;
     width:94%;
+    border-collapse: collapse;
+    table-layout: auto;
     margin: 0 auto;
     margin-top: 10px;
+    font-size:1.05em;
     display:none;
     
 }
 
-
-table, tr, td {
+table {
+    width:94%;
     border-collapse: collapse;
-    text-align: left;
-}
+    margin: 0 auto;
+    margin-top: 10px;
+    font-size:1.05em;
+    display:none;
+  } 
+  
+  th,td {
+    padding:20px 15px 10px 15px;
+    text-align:left;
+    vertical-align: top;
+
+  }
+  
 
 #theadedu{
     background-color:rgb(39, 41, 51);
@@ -255,32 +292,52 @@ table, tr, td {
     color:white;
 }
 
+
 #theadwebp{
-    background-color:rgb(6, 59, 47);
+    background-color: rgb(156, 40, 11);
     color:white;
+    
 }
 
-
-thead td {
-    padding:20px;
+#theadwork th, #worktable td{
     width:100%;
 }
 
-tbody td{    
-    padding:20px 20px 10px 20px;
+.tablebtns {
+    border-bottom: 1px solid grey;
 }
+
+tbody a{
+    font-weight:bold;
+    color:rgb(26, 26, 26);
+    transition:all 0.2s;
+}
+tbody a:hover {
+    opacity: 0.6;
+}
+
 
 .tablebtns button  {
     float:right;
     padding:10px 15px 10px 15px;
     margin-left:10px;
-    border:3px solid rgb(39, 41, 51);
     font-weight:bold;
-    color:rgb(39, 41, 51);
     cursor:pointer;
     background-color:transparent;
     border-radius:5px;
     transition:all 0.2s;
+}
+
+#eduprinttable button {color:rgb(39, 41, 51); border:3px solid rgb(39, 41, 51);}
+#worktable button {color:rgb(223, 113, 23); border:3px solid rgb(223, 113, 23);}
+#webptable button {color:rgb(156, 40, 11); border:3px solid rgb(156, 40, 11);}
+
+#eduprinttable button:hover{color:white; background-color:rgb(39, 41, 51);}
+#worktable button:hover {color:white; background-color:rgb(223, 113, 23);}
+#webptable button:hover {color:white; background-color:rgb(156, 40, 11);}
+
+.tablebtns{
+    border-bottom:1px solid rgb(145, 145, 145);
 }
 
 .listingedu button, .listingwork button, .listingwebpages button {
@@ -295,13 +352,6 @@ tbody td{
     border-radius:5px;
 }
 
-table button:hover {
-    color:white;
-    background-color:rgb(39, 41, 51);
-}
-.tablebtns{
-    border-bottom:1px solid rgb(49, 49, 49);
-}
 
 .listingedu, .listingwork, .listingwebpages {
     display:inline-block;
@@ -321,31 +371,75 @@ table button:hover {
 }
 .listingedu{background-color:rgb(39, 41, 51);}
 .listingwork{background-color:rgb(223, 113, 23);}
-.listingwebpages{background-color:rgb(6, 59, 47);}
+.listingwebpages{background-color:rgb(6, 59, 19);}
 
 footer {
-    margin-top:20px;
-    padding:50px;
+    margin-top:100px;
+    padding:100px 10px 50px 10px;
+    border-top:1px solid grey;
+
+}
+
+footer a {
+    color: rgb(71, 71, 71);
+    font-weight:bold;
+}
+footer a:hover {
+    filter:opacity(0.6);
 }
 
 footer p {
     text-align:center;
+    color:rgb(71, 71, 71);
+    margin-bottom:15px;
 }
 
 
 @media screen and (min-width:800px){
+    header .logobox{
+        margin-left:50px;
+    }
+
+    header ul {
+        list-style:none;
+        display:inline-block;
+        width:auto;
+        margin-top:50px;
+    
+    }
+    
+    header li {
+        float:left;
+        width:fit-content;
+        border:0;
+    }
+    
+    header li a {
+        color:rgb(43, 43, 43);
+        transition: all 0.2s;
+        font-weight:bold;
+        display:inline-block;
+        padding:10px 15px 10px 15px;
+        border-right:0.5px solid rgb(204, 204, 204);
+    }
+
+    #subheadline {
+        font-size:1.2em;
+        margin-bottom:20px;
+        max-width:800px;
+        width:100%;
+    }
 
     h2 {
         max-width:800px;
         margin-left:0;
+        font-size:1.3em;
     }
 
     table {
         display:block;
-        margin: 0 auto;
-        table-layout: fixed;
-        width: 100%;
         margin-top: 10px;
+        width:100%;
     }
 
     #eduprintlist, #worklist, #webplist{
