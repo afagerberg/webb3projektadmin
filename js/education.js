@@ -1,4 +1,4 @@
-//Moment 5 DT173G av Alice Fagerberg
+//Projekt DT173G av Alice Fagerberg
 
 "use strict";
 //Allmänna variabler och styles

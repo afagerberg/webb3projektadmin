@@ -31,4 +31,4 @@
     </header>
 
     <div id="content">
-        <h1 id ="subheadline">Administrera mitt digitala CV</h1>
+        <h1 id ="subheadline">Administrera min digitala portfolio</h1>

@@ -23,7 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>digiCV admin</title>
+    <title>afagerberg admin</title>
 </head>
 <body>
 
@@ -32,7 +32,7 @@
 <div id="frontlogo">
 
 </div>
-    <h2>Administera mitt digitala CV</h2>
+    <h1>Administera min digitala portfolio</h1>
 
 <?php
     if(isset($_GET['message'])) {
@@ -63,8 +63,8 @@
         <ul class="admintopics">
         <li><a href="admineducation.php" class="box1"> Utbildningar</a></li>
         <li><a href="adminwork.php" class="box2">Arbetserfarenhet</a></li>
-        <li><a href="adminwebpages" class="box3">Webbplatser</a></li>
-        <li><a href="adminwebpages" class="box4">Se mitt digiCV</a></li>   
+        <li><a href="adminwebpages" class="box3">Webbsidor</a></li>
+        <li><a href="adminwebpages" class="box4">Min portfolio</a></li>   
     </ul>
     <a href="logout.php" class="logout">Logga ut</a>
 <?php
@@ -74,6 +74,10 @@
     
 
 </div>
+
+<footer>
+    <p>copyright afagerberg // Alice Fagerberg</p>
+</footer>
 
     
 </body>

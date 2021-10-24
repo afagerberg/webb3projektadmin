@@ -1,7 +1,7 @@
     </div>
 <footer>
-    <p><a href="#">Gå till mitt digiCV</a></p>
-    <p>Webbutveckling III Projekt // Alice Fagerberg</p>
+    <p><a href="#">Gå till portfolio</a></p>
+    <p>copyright afagerberg | Alice Fagerberg</p>
 </footer>    
     
 <script src="js/education.js"></script>   

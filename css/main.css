@@ -1,15 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
 }
 
-body{
-    font-family:'Segoe UI', Tahoma, Verdana, sans-serif
+body, button{
+    font-family:'Nunito', sans-serif;
 }
 
 #frontlogo {
-    width:300px;
+    max-width:300px;
     margin:0 auto;
     height:200px;
     background-color:rgb(59, 65, 80);
@@ -23,9 +25,8 @@ header{
     position: sticky;
     top:0;
     width:100%;
-    padding-top:20px;
-    border-bottom:1px solid grey;
-    background-color:white;
+    padding-top:10px;
+    background-color:rgba(255, 255, 255, 0.87);
 
 }
 
@@ -48,7 +49,8 @@ header ul {
 
 header li {
     flex:25%;
-    border:0.5px solid rgb(197, 197, 197);
+    border:0.5px solid rgba(255, 255, 255, 0.5);
+    background-color:rgba(0, 52, 129, 0.205);
     text-align:center;
 }
 
@@ -74,6 +76,7 @@ header a:hover {
     width:94%;
     margin:0 auto;
     padding-top:100px;
+    padding-bottom:180px;
 }
 
 #content{
@@ -106,9 +109,9 @@ header a:hover {
     margin:1px;
     
 }
-.box1 {background-color:rgb(39, 41, 51);}
-.box2 {background-color:rgb(218, 144, 34);}
-.box3 {background-color:rgb(49, 66, 18);}
+.box1 {background-color:rgb(34, 45, 70);}
+.box2 {background-color:rgb(212, 134, 17);}
+.box3 {background-color:rgb(36, 36, 36);}
 .box4 {background-color:rgb(156, 40, 11); color:white;}
 
 .admintopics li a {
@@ -143,14 +146,16 @@ h2 {
     margin:0 auto;
 }
 
-#admin h2 {
-    max-width:300px;
+#admin h1 {
+    max-width:320px;
     margin:0 auto;
     text-align:center;
-    font-size:1.2em;
-    color:grey;
+    font-size:1.85em;
+    color:#bdbdbd;
     padding-top:5px;
-    padding-bottom:30px;
+    padding-bottom:10px;
+    margin-bottom:40px;
+    border-bottom:1px solid rgb(204, 204, 204);
 }
 
 #loginform {
@@ -162,14 +167,14 @@ h2 {
 #loginbtn {
     border:0;
     padding:15px;
-    border: 3px solid rgb(41, 49, 70);
-    color:rgb(41, 49, 70);
+    border: 3px solid rgb(34, 45, 70);
+    color:rgb(34, 45, 70);
     background-color: transparent;
     font-weight:bold;
     cursor:pointer;
     transition:all 0.2s;
 }
-#loginbtn:hover {background-color:rgb(41, 49, 70); color:white;}
+#loginbtn:hover {background-color:rgb(34, 45, 70); color:white;}
 
 #postform {
     max-width:800px;
@@ -268,6 +273,7 @@ table {
     margin-top: 10px;
     font-size:1.05em;
     display:none;
+    margin-bottom:100px;
   } 
   
   th,td {
@@ -279,18 +285,18 @@ table {
   
 
 #theadedu{
-    background-color:rgb(39, 41, 51);
+    background-color:rgb(34, 45, 70);
     color:white;
 }
 
 #theadwork{
-    background-color:rgb(218, 144, 34);
+    background-color:rgb(212, 134, 17);
     color:white;
 }
 
 
 #theadwebp{
-    background-color: rgb(49, 66, 18);
+    background-color: rgb(36, 36, 36);
     color:white;
     
 }
@@ -324,28 +330,42 @@ tbody a:hover {
     transition:all 0.2s;
 }
 
-#eduprinttable button {color:rgb(39, 41, 51); border:3px solid rgb(39, 41, 51);}
-#worktable button {color:rgb(218, 144, 34); border:3px solid rgb(218, 144, 34);}
-#webptable button {color:rgb(40, 71, 0); border:3px solid rgb(40, 71, 0);}
+#eduprinttable button {color:rgb(34, 45, 70); border:3px solid rgb(34, 45, 70);}
+#worktable button {color:rgb(212, 134, 17); border:3px solid rgb(212, 134, 17);}
+#webptable button {color:rgb(36, 36, 36); border:3px solid rgb(36, 36, 36);}
 
-#eduprinttable button:hover{color:white; background-color:rgb(39, 41, 51);}
-#worktable button:hover {color:white; background-color:rgb(218, 144, 34);}
-#webptable button:hover {color:white; background-color:rgb(40, 71, 0);}
+#eduprinttable button:hover{color:white; background-color:rgb(34, 45, 70);}
+#worktable button:hover {color:white; background-color:rgb(212, 134, 17);}
+#webptable button:hover {color:white; background-color:rgb(36, 36, 36);}
 
 .tablebtns{
     border-bottom:1px solid rgb(145, 145, 145);
+}
+
+#eduprintlist, #worklist, #webplist {
+    margin-bottom:100px;
 }
 
 .listingedu button, .listingwork button, .listingwebpages button {
     padding:10px 15px 10px 15px;
     margin-right:10px;
     margin-top:15px;
-    border:3px solid white;
-    font-weight:bold;
-    color:white;
+    font-weight:800;
     cursor:pointer;
     background-color:transparent;
     border-radius:5px;
+}
+.listingedu button {
+    color:rgb(34, 45, 70);
+    border:3px solid rgb(34, 45, 70);
+}
+.listingwork button {
+    color:rgb(212, 134, 17);
+    border:3px solid rgb(212, 134, 17);
+}
+.listingwebpages button {
+    color:rgb(36, 36, 36);
+    border:3px solid rgb(36, 36, 36);
 }
 
 
@@ -354,29 +374,37 @@ tbody a:hover {
     list-style: none;
     width:100%;
     margin:0 auto;
-    border-bottom:1px solid white;
-    padding:10px 0px 10px 0px;
+    padding:15px 5px 15px 5px;
+    
     
 }
 .listingedu li, .listingwork li, .listingwebpages li {
     max-width:400px;
     width:94%;
     margin:0 auto;
-    padding:5px;
-    color:white;    
+    padding:10px;
+    color:black;
+    background-color:white;  
 }
-.listingedu{background-color:rgb(39, 41, 51);}
-.listingwork{background-color:rgb(218, 144, 34);}
-.listingwebpages{background-color:rgb(49, 66, 18);}
+.listingedu a, .listingwork a, .listingwebpages a{
+    font-weight:800;
+    color:rgb(156, 40, 11);
+}
+.listingedu{background-color:rgb(34, 45, 70);}
+.listingwork{background-color:rgb(212, 134, 17);}
+.listingwebpages{background-color:rgb(36, 36, 36);}
 
 footer {
-    margin-top:100px;
-    padding:100px 10px 50px 10px;
+    max-width:600px;
+    width:94%;
+    margin:0 auto;
+    padding:60px 10px 50px 10px;
     border-top:1px solid grey;
 
 }
 
 footer a {
+    display:block;
     color: rgb(71, 71, 71);
     font-weight:bold;
 }
@@ -398,6 +426,7 @@ footer p {
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-bottom:10px;
     }
     header .logobox{
         margin-left:50px;
@@ -407,7 +436,7 @@ footer p {
         list-style:none;
         display:inline-block;
         width:auto;
-        margin-top:50px;
+        margin-top:25px;
     
     }
     
@@ -415,6 +444,7 @@ footer p {
         float:left;
         width:fit-content;
         border:0;
+        background-color:transparent
     }
     
     header li a {
