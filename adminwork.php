@@ -1,5 +1,8 @@
 <!-- Projekt DT173G av Alice Fagerberg-->
-<?php include("includes/header.php") ?>
+<?php 
+    $page_title ="min arbetserfarenhet";
+    include("includes/header.php");     
+?>
     
         <h2 id="formheading">Lägg till arbetserfarenhet</h2>
         

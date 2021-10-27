@@ -1,5 +1,8 @@
 <!-- Projekt DT173G av Alice Fagerberg-->
-<?php include("includes/header.php") ?>
+<?php 
+$page_title ="mina utbildingar";
+include("includes/header.php");     
+?>
     
         <h2 id="formheading">Lägg till utbildning</h2>
         

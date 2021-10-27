@@ -1,26 +1,29 @@
-<?php include("includes/header.php") ?>
+<?php 
+    $page_title ="mina webbsidor";
+    include("includes/header.php");    
+?>
    
-        <h2 id="formheading">Lägg till webbplatser som du har utvecklat</h2>
+        <h2 id="formheading">Lägg till webbsidor som du har utvecklat</h2>
         
         <form id="postform">
-            <label for="pagetitle"> Webbplatstitel:<br>
+            <label for="pagetitle"> Webbsidestitel:<br>
             <input type="text" name="pagetitle" id="pagetitle"></label><br>
             <label for="weburl"> Webblänk:<br>
             <input type="text" name="weburl" id="weburl"></label><br>
-            <label for="description" id="labeldesc"> Beskriv din webbplats:</label><br>
+            <label for="description" id="labeldesc"> Beskriv din webbsida:</label><br>
             <textarea name="description" id="description"  rows="10"></textarea><br>
 
-            <button id="add" class="box3">Lägg till webbplats</button>
-            <button id="update" class="box3"> Uppdatera webbplats</button>
+            <button id="add" class="box3">Lägg till webbsida</button>
+            <button id="update" class="box3"> Uppdatera webbsida</button>
         </form>
         <p id="message"></p>
 
-        <h2 id="webpagesheading">Mina webbplatser</h2>
+        <h2 id="webpagesheading">Mina webbsidor</h2>
         <table>
             <thead id="theadwebp">
                 <!-- Titelegenskaper för tillagd vara-->
                 <tr>
-                    <td>Titel webbplats</td>
+                    <td>Titel webbsida</td>
                     <td>Webblänk</td>
                     <td>Beskrivning</td>
                 </tr>
