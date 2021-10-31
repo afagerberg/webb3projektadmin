@@ -4,7 +4,7 @@ Admingränssnitt konsumerar och hanterar data från och till REST API Portfolio
 
 Datan presenteras och hanteras under tre kategorier: Mina utbildningar, Min arbetserfarenhet och Mina webbsidor. 
 
-* Samtliga CRUD funktioner hanteras i gränssnittet
+* För datahantering används Fetch API som ramverk samt följande metoder:
     - GET
     - POST
     - PUT
