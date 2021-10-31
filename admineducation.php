@@ -1,11 +1,11 @@
-<!-- Projekt DT173G av Alice Fagerberg-->
 <?php 
+include_once("includes/config.php");
 $page_title ="mina utbildingar";
 include("includes/header.php");     
 ?>
     
         <h2 id="formheading">Lägg till utbildning</h2>
-        
+        <!-- inputformulär utbildning-->
         <form id="postform">
             <label for="coursecode"> Kurskod:<br>
             <input type="text" name="coursecode" id="coursecode"></label><br>
@@ -19,8 +19,8 @@ include("includes/header.php");
             <input type="date" name="startdate" id="startdate"></label><br>
             <label for="enddate">Slutdatum<br>
             <input type="date" name="enddate" id="enddate"></label><br>
-            <button id="add" class="box1">Lägg till utbildning</button>
-            <button id="update" class="box1"> Uppdatera utbildning</button>
+            <button id="add" class="edubtn">Lägg till utbildning</button>
+            <button id="update" class="edubtn"> Uppdatera utbildning</button>
         </form>
         <p id="message"></p>
 
@@ -46,4 +46,10 @@ include("includes/header.php");
 
         </div>
 
-<?php include("includes/footer.php") ?>
+    </div>
+
+<?php include("includes/footer.php"); ?>
+    
+<script src="js/education.js"></script>   
+</body>
+</html>

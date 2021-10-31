@@ -37,7 +37,7 @@ function getAllJobs(){
     worklistEl.innerHTML = "";
     worktableEl.innerHTML = "";
 
-    fetch("http://localhost/webb3projekt/workexperience")
+    fetch("https://dt173g_portfolio_restapi.afagerberg.se/workexperience")
     .then(response => response.json())
     .then(data =>{
        data.forEach(job =>{
@@ -75,22 +75,29 @@ function addJob() {
     
     let workObj = {'title': title, 'workplace': workplace, 'startdate': startdate, 'enddate': enddate};
         
-        fetch("http://localhost/webb3projekt/workexperience", {
+        fetch("https://dt173g_portfolio_restapi.afagerberg.se/workexperience", {
             method: 'POST',
             body: JSON.stringify(workObj),
 
         })
         .then(response => { 
             response.json()
+            //kontrollerar response
             if(response.status === 400){
                 message.style.color = "rgb(212, 25, 0)";
-                message.innerHTML = "Du måste fylla i alla fält! - En arbetstitel, en arbetsplats, samt start och sluttdatum för ditt arbete";
+                message.style.marginTop = "10px";
+                message.style.height = "auto";
+                message.innerHTML = "Du måste fylla i alla fält korrekt! - En arbetstitel, en arbetsplats, samt start och sluttdatum för ditt arbete";
             }else{
                 if(response.status === 201) {
                     message.style.color = "green";
+                    message.style.marginTop = "10px";
+                    message.style.height = "auto";
                     message.innerHTML = "En arbetserfarenhet lades till!";
                 }else {
                     message.style.color = "rgb(212, 25, 0)";
+                    message.style.marginTop = "10px";
+                    message.style.height = "auto";
                     message.innerHTML = "något gick fel...";
                 }
             }
@@ -155,9 +162,11 @@ function updateJob(id) {
     // kollar input och hämtar
     if(title == "" || workplace == "" || startdate == "" || enddate == ""){
         message.style.color = "rgb(212, 25, 0)";
-        message.innerHTML = "Du måste fylla i alla fält för att uppdatera din arbetserfarenhet!";
+        message.style.marginTop = "10px";
+        message.style.height = "auto";
+        message.innerHTML = "Du måste fylla i alla fält korrekt för att uppdatera din arbetserfarenhet!";
     }else{
-        fetch("http://localhost/webb3projekt/workexperience?jobid=" + id,{
+        fetch("https://dt173g_portfolio_restapi.afagerberg.se/workexperience?jobid=" + id,{
         method:'PUT',
         headers:{
         'Content-Type':'application/json'
@@ -168,16 +177,22 @@ function updateJob(id) {
         .then(response => {
             
                 response.json()
+                //kontrollerar response
                 if(response.status === 200) {
 
                     message.style.color = "green";
+                    message.style.marginTop = "10px";
+                    message.style.height = "auto";
                     message.innerHTML = "Din arbetserfarenhet uppdaterades!";
 
                     window.setTimeout(function(){location.reload()},2000);
 
                 }else {
-                    message.innerHTML = "något gick fel...";
                     message.style.color = "rgb(212, 25, 0)";
+                    message.style.marginTop = "10px";
+                    message.style.height = "auto";
+                    message.innerHTML = "något gick fel...";
+                    
                 }
             
             
@@ -211,11 +226,13 @@ function updateJob(id) {
 
 // Raderar specifik kurs
 function deleteJob(id) {
-    fetch("http://localhost/webb3projekt/workexperience?jobid=" + id, {
+    fetch("https://dt173g_portfolio_restapi.afagerberg.se/workexperience?jobid=" + id, {
         method: 'DELETE',
 
     })
     .then(response =>{ 
+        message.style.marginTop = "10px";
+        message.style.height = "auto";
         message.style.color = "green";
         message.innerHTML = "Arbetserfarenheten är raderad!";
         response.json() })

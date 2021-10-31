@@ -1,10 +1,11 @@
 <?php 
+    include_once("includes/config.php");
     $page_title ="mina webbsidor";
     include("includes/header.php");    
 ?>
    
         <h2 id="formheading">Lägg till webbsidor som du har utvecklat</h2>
-        
+        <!-- inputformulär utvecklad webbsida-->
         <form id="postform">
             <label for="pagetitle"> Webbsidestitel:<br>
             <input type="text" name="pagetitle" id="pagetitle"></label><br>
@@ -13,8 +14,8 @@
             <label for="description" id="labeldesc"> Beskriv din webbsida:</label><br>
             <textarea name="description" id="description"  rows="10"></textarea><br>
 
-            <button id="add" class="box3">Lägg till webbsida</button>
-            <button id="update" class="box3"> Uppdatera webbsida</button>
+            <button id="add" class="webbtn">Lägg till webbsida</button>
+            <button id="update" class="webbtn"> Uppdatera webbsida</button>
         </form>
         <p id="message"></p>
 
@@ -36,12 +37,8 @@
 
         </div>
     </div>
-<footer>
-<p><a href="#">Gå till portfolio</a></p>
-<p>copyright afagerberg | Alice Fagerberg</p>
-</footer>    
 
-
+<?php include("includes/footer.php"); ?>
     
 <script src="js/webpages.js"></script>    
 </body>

@@ -1,11 +1,11 @@
-<!-- Projekt DT173G av Alice Fagerberg-->
 <?php 
-    $page_title ="min arbetserfarenhet";
-    include("includes/header.php");     
+include_once("includes/config.php");
+$page_title ="min arbetserfarenhet";
+include("includes/header.php");     
 ?>
     
         <h2 id="formheading">Lägg till arbetserfarenhet</h2>
-        
+        <!-- inputformulär arbete-->
         <form id="postform">
             <label for="worktitle"> Arbetstitel:<br>
             <input type="text" name="worktitle" id="worktitle"></label><br>
@@ -15,8 +15,8 @@
             <input type="date" name="startdate" id="startdate"></label><br>
             <label for="enddate">Slutdatum<br>
             <input type="date" name="enddate" id="enddate"></label><br>
-            <button id="add" class="box2">Lägg till arbete</button>
-            <button id="update" class="box2"> Uppdatera arbete</button>
+            <button id="add" class="workbtn">Lägg till arbete</button>
+            <button id="update" class="workbtn"> Uppdatera arbete</button>
         </form>
         <p id="message"></p>
 
@@ -41,12 +41,8 @@
 
         </div>
     </div>
-<footer>
-<p><a href="#">Gå till portfolio</a></p>
-<p>copyright afagerberg | Alice Fagerberg</p>
-</footer>    
 
-
+<?php include("includes/footer.php"); ?>
     
 <script src="js/work.js"></script>    
 </body>

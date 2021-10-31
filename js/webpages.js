@@ -35,7 +35,7 @@ function getAllwebpages(){
     webplistEl.innerHTML = "";
     webptableEl.innerHTML = "";
 
-    fetch("http://localhost/webb3projekt/webpages")
+    fetch("https://dt173g_portfolio_restapi.afagerberg.se/webpages")
     .then(response => response.json())
     .then(data =>{
        data.forEach(webpage =>{
@@ -70,22 +70,29 @@ function addWebpage() {
     
     let pageObj = {'pageurl': pageurl, 'title': title, 'pagedescription': desc};
         
-        fetch("http://localhost/webb3projekt/webpages", {
+        fetch("https://dt173g_portfolio_restapi.afagerberg.se/webpages", {
             method: 'POST',
             body: JSON.stringify(pageObj),
 
         })
         .then(response => { 
             response.json()
+            //kontrollerar response
             if(response.status === 400){
                 message.style.color = "rgb(212, 25, 0)";
-                message.innerHTML = "Du måste fylla i alla fält! - En webbplatstitel, en länk, samt en liten beskrivning";
+                message.style.marginTop = "10px";
+                message.style.height = "auto";
+                message.innerHTML = "Du måste fylla i alla fält korrekt! - En webbplatstitel, en länk, samt en liten beskrivning";
             }else{
                 if(response.status === 201) {
                     message.style.color = "green";
+                    message.style.marginTop = "10px";
+                    message.style.height = "auto";
                     message.innerHTML = "En webbplats lades till!";
                 }else {
                     message.style.color = "rgb(212, 25, 0)";
+                    message.style.marginTop = "10px";
+                    message.style.height = "auto";
                     message.innerHTML = "något gick fel...";
                 }
             }
@@ -112,7 +119,7 @@ function addWebpage() {
 function getWebpageById(id, title, pageurl, pagedescription) {
 
 
-    formHeading.innerHTML = "Uppdatera webbplats";
+    formHeading.innerHTML = "Uppdatera webbsida";
     window.scrollTo(0, 0);
 
     message.innerHTML = "";
@@ -148,9 +155,11 @@ function updateWebpage(id) {
     // kollar input och hämtar
     if(title == "" || pageurl == "" || desc == ""){
         message.style.color = "rgb(212, 25, 0)";
-        message.innerHTML = "Du måste fylla i alla fält för att uppdatera din webbplats!";
+        message.style.marginTop = "10px";
+        message.style.height = "auto";
+        message.innerHTML = "Du måste fylla i alla fält korrekt för att uppdatera din webbsida!";
     }else{
-        fetch("http://localhost/webb3projekt/webpages?id=" + id,{
+        fetch("https://dt173g_portfolio_restapi.afagerberg.se/webpages?id=" + id,{
         method:'PUT',
         headers:{
         'Content-Type':'application/json'
@@ -161,16 +170,20 @@ function updateWebpage(id) {
         .then(response => {
             
                 response.json()
+                //kontrollerar response
                 if(response.status === 200) {
 
                     message.style.color = "green";
-                    message.innerHTML = "Din webbplats uppdaterades!";
+                    message.innerHTML = "Din webbsida uppdaterades!";
 
                     window.setTimeout(function(){location.reload()},2000);
 
                 }else {
-                    message.innerHTML = "något gick fel...";
                     message.style.color = "rgb(212, 25, 0)";
+                    message.style.marginTop = "10px";
+                    message.style.height = "auto";
+                    message.innerHTML = "något gick fel...";
+                    
                 }
             
             
@@ -195,7 +208,7 @@ function updateWebpage(id) {
         urlInput.value = "";
         descInput.value = "";
 
-        formHeading.innerHTML = "Lägg till webbplatser som du har utvecklat";
+        formHeading.innerHTML = "Lägg till webbsidor som du har utvecklat";
     }
 
 
@@ -203,13 +216,15 @@ function updateWebpage(id) {
 
 // Raderar specifik kurs
 function deleteWebpage(id) {
-    fetch("http://localhost/webb3projekt/webpages?id=" + id, {
+    fetch("https://dt173g_portfolio_restapi.afagerberg.se/webpages?id=" + id, {
         method: 'DELETE',
 
     })
     .then(response =>{ 
         message.style.color = "green";
-        message.innerHTML = "Webbplatsen är raderad!";
+        message.style.marginTop = "10px";
+        message.style.height = "auto";
+        message.innerHTML = "Webbsidan är raderad!";
         response.json() })
     .then(data =>{
         getAllwebpages();

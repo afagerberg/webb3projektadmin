@@ -1,3 +1,4 @@
+/*DT173G Projekt admingränssnitt Alice Fagerberg */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
 *{
@@ -11,11 +12,15 @@ body, button{
 }
 
 #frontlogo {
-    max-width:300px;
+    max-width:320px;
+    width:100%;
     margin:0 auto;
-    height:200px;
-    background-color:rgb(59, 65, 80);
     margin-bottom:10px;
+    padding:0 10px 0 10px;
+}
+
+#frontlogo img, .logobox img {
+    width:100%;
 }
 
 a{
@@ -25,16 +30,14 @@ header{
     position: sticky;
     top:0;
     width:100%;
-    padding-top:10px;
+    padding-top:15px;
     background-color:rgba(255, 255, 255, 0.87);
 
 }
 
 header .logobox{
     margin:0 auto;
-    width:100px;
-    height:70px;
-    background-color:black;
+    width:150px;
     
 }
 header ul {
@@ -75,7 +78,7 @@ header a:hover {
     max-width:600px;
     width:94%;
     margin:0 auto;
-    padding-top:100px;
+    padding-top:50px;
     padding-bottom:180px;
 }
 
@@ -155,7 +158,6 @@ h2 {
     padding-top:5px;
     padding-bottom:10px;
     margin-bottom:40px;
-    border-bottom:1px solid rgb(204, 204, 204);
 }
 
 #loginform {
@@ -220,22 +222,22 @@ input{
     margin-top:0;
     height:0;
     transition: all 0.5s;
+    max-width:410px;
+    padding: 0 10px 0 10px;
+    margin:0 auto;
 }
 
-#add, #update {
+#content form button {
     max-width:390px;
     margin:0 auto;
     width:100%;
     padding:15px;
     margin-top:10px;
-    border:0;
-    color: white;
     cursor:pointer;
     transition:all 0.3s;
-}
-
-#add:hover, #update:hover {
-    filter:opacity(0.6);
+    font-size:1em;
+    font-weight:bold;
+    border-radius:6px;
 }
 
 #add {
@@ -245,12 +247,23 @@ input{
 #update {
     display:none;
 }
+.edubtn, .workbtn, .webbtn{
+    background-color:white;
+}
+
+.edubtn { border:3px solid rgb(34, 45, 70); color:rgb(34, 45, 70);}
+.edubtn:hover { background-color: rgb(34, 45, 70); color:rgb(255, 255, 255);}
+.workbtn { border:3px solid rgb(212, 134, 17); color:rgb(212, 134, 17);}
+.workbtn:hover { background-color: rgb(212, 134, 17); color:rgb(255, 255, 255);}
+.webbtn { border:3px solid rgb(36, 36, 36); color:rgb(36, 36, 36);}
+.webbtn:hover { background-color: rgb(36, 36, 36); color:rgb(255, 255, 255);}
+
 
 table, form input, #content li {
     font-size:1.05em;
 }
 
-#content button {
+table button, #content li button {
     font-size:0.9em;
 }
 
@@ -419,7 +432,10 @@ footer p {
 }
 
 
-@media screen and (min-width:800px){
+@media screen and (min-width:810px){
+    #admin {
+        padding-top:100px;
+    }
 
     header{
     display:flex;
@@ -431,12 +447,15 @@ footer p {
     header .logobox{
         margin-left:50px;
     }
+    .a_logo {
+        transition: all 0.2s;
+    }
 
     header ul {
         list-style:none;
         display:inline-block;
         width:auto;
-        margin-top:25px;
+        margin-top:5px;
     
     }
     
@@ -448,12 +467,13 @@ footer p {
     }
     
     header li a {
-        color:rgb(43, 43, 43);
+        color:rgb(36, 36, 36);
         transition: all 0.2s;
         font-weight:bold;
         display:inline-block;
         padding:10px 15px 10px 15px;
         border-right:0.5px solid rgb(204, 204, 204);
+        font-size:1em;
     }
 
     #subheadline {
@@ -461,6 +481,12 @@ footer p {
         margin-bottom:20px;
         max-width:800px;
         width:100%;
+    }
+
+    #message{
+        max-width:800px;
+        width:100%;
+        padding:0;
     }
 
     h2 {
