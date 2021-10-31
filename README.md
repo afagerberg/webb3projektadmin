@@ -11,7 +11,7 @@ Datan presenteras och hanteras under tre kategorier: Mina utbildningar, Min arbe
     - DELETE
 
 
-## Vill du använda detta admigränssnitt?
+## Vill du använda detta admingränssnitt?
 För säkerhetsskäl är användarinloggningen låst och du behöver därmed klona eller ladda ner repositoryt
 
 -För att komma in i admingränssnittet ändrar du variabelinställningar för användrarnamn och lösenord i user.php 
@@ -19,5 +19,5 @@ För säkerhetsskäl är användarinloggningen låst och du behöver därmed klo
 ### Klona repository
 `git clone https://github.com/afagerberg/webb3projektadmin.git`
 
-## Har du inloggning för den publicerade?
+## Har du inloggning för det publicerade gränssnittet?
 Besök afagerberg admin: https://afagerberg.se/admin/ 
