@@ -17,7 +17,7 @@ För säkerhetsskäl är användarinloggningen låst och du behöver därmed klo
 -För att komma in i admingränssnittet ändrar du variabelinställningar för användrarnamn och lösenord i user.php 
 
 ### Klona repository
-`git clone https://github.com/afagerberg/webb3projektadmin.git`
+`git clone https://github.com/afagerberg/webb3projektadmin.git` 
 
 ## Har du inloggning för det publicerade gränssnittet?
 Besök afagerberg admin: https://afagerberg.se/admin/ 
